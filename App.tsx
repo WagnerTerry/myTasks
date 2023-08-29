@@ -1,6 +1,6 @@
 import React from 'react';
 import { View, Text } from 'react-native';
-import { Home } from './src/Home';
+import { Home } from './src/pages/Home';
 
 const App = () => {
   return (
