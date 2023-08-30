@@ -1,10 +1,12 @@
 import React from 'react';
-import { View, Text } from 'react-native';
 import { Home } from './src/pages/Home';
+import { TasksProvider } from './src/context/TasksContent';
 
 const App = () => {
   return (
-    <Home />
+    <TasksProvider>
+      <Home />
+    </TasksProvider>
   )
 }
 

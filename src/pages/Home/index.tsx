@@ -10,6 +10,7 @@ import {
   //ScrollView // usado para pequenas listas
 } from 'react-native';
 import { TaskList } from '../../components/TaskList';
+import { TasksContext } from '../../context/TasksContent';
 
 interface Task {
   id: string;
@@ -18,7 +19,7 @@ interface Task {
 
 export const Home = () => {
   const [newTask, setNewTask] = React.useState('')
-  const [tasks, setTasks] = React.useState<Task[]>([])
+  const { addTask } = React.useContext(TasksContext)
 
   const handleAddNewTask = () => {
     const data = {
@@ -26,7 +27,8 @@ export const Home = () => {
       title: newTask ? newTask : 'Tarefa vaga'
     }
 
-    setTasks([...tasks, data])
+    addTask(data)
+
   }
 
   return (
@@ -47,7 +49,7 @@ export const Home = () => {
 
         <Text style={styles.titleTasks}>Minhas Tarefas</Text>
 
-        <TaskList tasks={tasks} />
+        <TaskList />
 
         {/* Usando ScrollView
          <ScrollView>
