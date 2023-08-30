@@ -10,16 +10,11 @@ import {
   //ScrollView // usado para pequenas listas
 } from 'react-native';
 import { TaskList } from '../../components/TaskList';
-import { TasksContext } from '../../context/TasksContent';
-
-interface Task {
-  id: string;
-  title: string;
-}
+import { useTaskList } from '../../context/TasksContent';
 
 export const Home = () => {
   const [newTask, setNewTask] = React.useState('')
-  const { addTask } = React.useContext(TasksContext)
+  const { addTask } = useTaskList()
 
   const handleAddNewTask = () => {
     const data = {

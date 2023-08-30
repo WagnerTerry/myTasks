@@ -1,9 +1,9 @@
 import React from 'react'
 import { FlatList, Text, TouchableOpacity, StyleSheet } from 'react-native'
-import { TasksContext, ITask } from '../../context/TasksContent'
+import { ITask, useTaskList } from '../../context/TasksContent'
 
 export const TaskList = () => {
-  const { tasks } = React.useContext(TasksContext)
+  const { tasks } = useTaskList()
   return (
 
     < FlatList

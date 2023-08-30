@@ -52,12 +52,12 @@ export const TasksProvider: React.FunctionComponent<IProps> = ({ children }) => 
   )
 }
 
-// export function useTaskList(): ITasksContext {
-//   const context = React.useContext(TasksContext)
+export function useTaskList(): ITasksContext {
+  const context = React.useContext(TasksContext)
 
-//   if (!context) {
-//     throw new Error('useTaskList deve ser usado em um TasksProvider')
-//   }
+  if (!context) {
+    throw new Error('useTaskList deve ser usado em um TasksProvider')
+  }
 
-//   return context
-// }
+  return context
+}
