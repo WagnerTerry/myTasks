@@ -15,3 +15,4 @@ App feito em React Native
 - yarn add -D prettier
 - yarn add @react-native-async-storage/async-storage
 - yarn add --dev @testing-library/react-native
+- yarn add -D @testing-library/react-hooks // testes com hooks
